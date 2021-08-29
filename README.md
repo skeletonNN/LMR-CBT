@@ -52,7 +52,7 @@ export WARP_CTC_PATH=/home/xxx/warp-ctc/build
 
 ### Result
 
-<img src=./assets/result.png" alt="image-20210829114952315" style="zoom: 50%;" />
+<img src="./assets/result.png" alt="image-20210829114952315" style="zoom: 50%;" />
 
 ## Reference
 
