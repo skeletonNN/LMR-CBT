@@ -6,11 +6,11 @@ from src import train
 import warnings
 warnings.filterwarnings("ignore")
 
-parser = argparse.ArgumentParser(description='MOSEI Sentiment Analysis')
+parser = argparse.ArgumentParser(description='Multimodal Emotion Recognition')
 parser.add_argument('-f', default='', type=str)
 
 # Fixed
-parser.add_argument('--model', type=str, default='MulT',
+parser.add_argument('--model', type=str, default='LMRCBT',
                     help='name of the model to use (Transformer, etc.)')
 
 # Tasks
@@ -28,7 +28,7 @@ parser.add_argument('--data_path', type=str, default='data',
                     help='path for storing the dataset')
 
 # Dropouts
-parser.add_argument('--attn_dropout', type=float, default=0.2,
+parser.add_argument('--attn_dropout', type=float, default=0.1,
                     help='attention dropout')
 parser.add_argument('--relu_dropout', type=float, default=0.1,
                     help='relu dropout')
@@ -48,7 +48,7 @@ parser.add_argument('--attn_mask', action='store_false',
                     help='use attention mask for Transformer (default: true)')
 
 # Tuning
-parser.add_argument('--batch_size', type=int, default=24, metavar='N',
+parser.add_argument('--batch_size', type=int, default=16, metavar='N',
                     help='batch size (default: 24)')
 parser.add_argument('--clip', type=float, default=1.0,
                     help='gradient clip value (default: 0.8)')
@@ -56,7 +56,7 @@ parser.add_argument('--lr', type=float, default=1e-3,
                     help='initial learning rate (default: 1e-3)')
 parser.add_argument('--optim', type=str, default='Adam',
                     help='optimizer to use (default: Adam)')
-parser.add_argument('--num_epochs', type=int, default=100,
+parser.add_argument('--num_epochs', type=int, default=120,
                     help='number of epochs (default: 40)')
 parser.add_argument('--when', type=int, default=20,
                     help='when to decay learning rate (default: 20)')
@@ -70,8 +70,8 @@ parser.add_argument('--seed', type=int, default=1337,
                     help='random seed')
 parser.add_argument('--no_cuda', action='store_true',
                     help='do not use cuda')
-parser.add_argument('--name', type=str, default='mult',
-                    help='name of the trial (default: "mult")')
+parser.add_argument('--name', type=str, default='LMRCBT',
+                    help='name of the trial (default: "LMRCBT")')
 args = parser.parse_args()
 
 torch.manual_seed(args.seed)

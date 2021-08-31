@@ -17,7 +17,7 @@ from sklearn.metrics import precision_recall_fscore_support
 from sklearn.metrics import accuracy_score, f1_score
 from src.eval_metrics import *
 import torch_utils as tu 
-device = torch.device('cuda:3')
+device = torch.device('cuda:4')
 
 ####################################################################
 #
@@ -43,7 +43,7 @@ def initiate(hyp_params, train_loader, valid_loader, test_loader):
     criterion = getattr(nn, hyp_params.criterion)() # 调参的重点对象
     # criterion = tu.LabelSmoothingCrossEntropy()
     # criterion_test = nn.CrossEntropyLoss()
-    if hyp_params.aligned or hyp_params.model=='MULT':
+    if hyp_params.aligned or hyp_params.model=='LMRCBT':
         ctc_criterion = None
         ctc_a2l_module, ctc_v2l_module = None, None
         ctc_a2l_optimizer, ctc_v2l_optimizer = None, None
