@@ -12,23 +12,21 @@ In this paper, we propose a neural network to learn modality-fused representatio
 
 ### Datasets
 
-Data files (containing processed MOSI, MOSEI and IEMOCAP datasets) can be downloaded.
+Data files (containing processed MOSI, MOSEI and IEMOCAP datasets) can be downloaded. We will release the data we have processed after the paper is accepted.
 
 ### Run the Code
 
 1. Create (empty) folders for data and pre-trained models:
-~~~~
+~~~~bash
 mkdir data pre_trained_models
 ~~~~
 
 and put the downloaded data in 'data/'.
 
 2. Command as follows
-~~~~
+~~~~bash
 python main.py [--FLAGS]
 ~~~~
-
-Note that the defualt arguments are for unaligned version of MOSEI. For other datasets, please refer to Supplmentary.
 
 ### Result
 
